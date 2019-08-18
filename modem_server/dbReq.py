@@ -31,6 +31,6 @@ def postPump(id, field, param):
         data = {field: param}
         requests.put(URL, headers=headers, data=json.dumps(data))
         
-postSector('1', 'pump_1_freq', '6')
+#postSector('1', 'pump_1_freq', '6')
 #      dataFrame = DataFrame(data)
 #      print(dataFrame[['username', 'managing']])

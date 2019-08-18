@@ -14,7 +14,6 @@ fcmHeaders = {
 def fcmReq(m, title, body):
     fcmToken = dbReq.getFcmToken(m)
 
-
     for i in fcmToken:
 
         fcmData = {
@@ -27,3 +26,5 @@ def fcmReq(m, title, body):
             }
         requests.post(fcmURL, data=json.dumps(fcmData), headers=fcmHeaders)
 
+
+fcmReq(1, 'hello', 'hi')

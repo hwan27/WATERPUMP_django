@@ -2,6 +2,13 @@ ul {
   list-style: none;
 }
 
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
 .listText {
   text-align: center;
   padding: 7% 10%;
@@ -47,34 +54,34 @@ ul {
   margin-right: 0.5em;
 }
 
-@media all and (min-aspect-ratio: 9/16) {
-  .list {
-    padding: 0.5em;
-    /* max-width:14/16 */
-    margin: 0px auto;
-    margin-top: 0.5em;
-    overflow: hidden;
-  }
-  .list li {
-    padding: 0.5em 1%;
-    display: block;
-    width: 50%;
-    float: left;
-    background: none;
-    border: 0;
-  }
+// @media all and (min-aspect-ratio: 9/16) {
+//   .list {
+//     padding: 0.5em;
+//     /* max-width:14/16 */
+//     margin: 0px auto;
+//     margin-top: 0.5em;
+//     overflow: hidden;
+//   }
+//   .list li {
+//     padding: 0.5em 1%;
+//     display: block;
+//     width: 50%;
+//     float: left;
+//     background: none;
+//     border: 0;
+//   }
 
-  .li-text {
-    display: block;
-    width: auto;
-    padding: 0;
-  }
-  .li-text {
-    padding: 0.1em 0;
-  }
-}
-@media all and (min-aspect-ratio: 16/16) /*(min-width: 80em) */ {
-  .list li {
-    width: 20%;
-  }
-}
+//   .li-text {
+//     display: block;
+//     width: auto;
+//     padding: 0;
+//   }
+//   .li-text {
+//     padding: 0.1em 0;
+//   }
+// }
+// @media all and (min-aspect-ratio: 16/16) /*(min-width: 80em) */ {
+//   .list li {
+//     width: 20%;
+//   }
+// }

@@ -9,7 +9,7 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 const SectorComponent = props => {
     return (
-        <div>
+        <div className={styles.container}>
 
             {props.sector.pump_count == 1 ? (
                 <Pump1 {...props} />

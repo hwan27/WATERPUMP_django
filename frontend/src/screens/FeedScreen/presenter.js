@@ -14,7 +14,7 @@ const FeedScreen = props => {
 const LoadingFeed = props => null;
 
 const RenderFeed = props => (
-    <div>
+    <div className={styles.container}>
         <Navigation {...props} />
 
         <div className={styles.feed}>

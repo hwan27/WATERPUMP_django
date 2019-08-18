@@ -14,7 +14,7 @@ const TownScreen = props => {
 const LoadingFeed = () => null;
 
 const RenderFeed = props => (
-    <div>
+    <div className={styles.container}>
         <Navigation {...props} title={props.town.title} />
 
         <div className={styles.feed}>

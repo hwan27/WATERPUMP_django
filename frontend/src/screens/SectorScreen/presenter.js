@@ -2,7 +2,9 @@ import React from "react";
 import styles from "./styles.module.scss";
 import SectorComponent from "components/SectorComponent";
 import Navigation from "components/Navigation";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 
 const SectorScreen = props => {
     if (props.loading) {
@@ -21,7 +23,9 @@ const RenderFeed = props => (
         <div className={styles.feed}>
             <div className={styles.row}>
             <div className={styles.modemName}>모뎀번호 : {props.sector.modem_number}</div>
-            <div className={styles.mapButton}>지도</div>
+            <div className={styles.mapButton}>
+                <FontAwesomeIcon icon={faMapMarkedAlt} />
+            </div>
             
             <div className={styles.connectBox}>
                 <div className={styles.connect}>
@@ -57,7 +61,9 @@ const RenderFeed = props => (
     
                         />
                     </form>
-                    <div onClick={props.update_pressure} className={styles.boxButton}>입력</div>
+                    <div onClick={props.update_pressure} className={styles.boxButton}>
+                        <FontAwesomeIcon icon={faEdit} />
+                    </div>
                 </div>
             
             <div className={styles.updateBox}>

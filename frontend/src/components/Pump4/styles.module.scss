@@ -37,6 +37,47 @@
 }
 
 .detail {
-    margin-top: 5vw;
+    margin-top: 7vw;
+    width: 22vw;
     font-size: 1.5vw;
+    background-color: #fff;
+    border-radius: 1em;
+}
+
+.row {
+    display: flex;
+    margin: 0.3vw;
+}
+
+.name {
+    width:5vw;
+    margin-right: 1vw;
+}
+
+.value {
+    width: 6vw;
+}
+
+.auto {
+    background-color: red;
+    color: #fff;
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 1em;
+}
+
+.manual {
+    color: blue;
+    font-size: 1.5vw;
+    font-weight: 500;
+    text-align: center;
+    padding:0.5em;
+    margin: 0.5vw;
+    border-bottom: 1px solid gray;
+}
+
+.bottom {
+    margin-top:1vw;
+    margin-left: 5vw;
+    margin-bottom: 1vw;
 }

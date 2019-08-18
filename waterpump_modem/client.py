@@ -9,12 +9,17 @@ import socket
 # response =ser.readline
 # print(response)
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-socket.connect(('127.0.0.1', 8000))
 
-while 1:
-    data = input()
-    socket.send(data.encode())
-    data2 = socket.recv(65535)
-    print('data received : ', data2.decode())
 
-socket.close()
+def run(HOST='127.0.0.1', PORT=8000):
+    socket.connect((HOST, PORT))
+
+    while 1:
+        data = input()
+        socket.send(data.encode())
+        data2 = socket.recv(65535)
+        print('data received : ', data2.decode())
+
+        #socket.close()
+if __name__ == '__main__':
+    run()

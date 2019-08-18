@@ -6,21 +6,27 @@ import fcmReq
 import dbReq
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_socket.bind(('127.0.0.1', 8000))
-server_socket.listen(0)
 
 
-def wheh():
+
+
+def run_server(HOST='127.0.0.1', PORT=8000):
+    server_socket.bind((HOST, PORT))
+    server_socket.listen()
     client_socket, addr = server_socket.accept()
-    t = threading.Thread(target=wheh)
-    t.setDaemon(True)
-    t.start()
+    # t = threading.Thread(target=run_server, args=)
+    # t.setDaemon(True)
+    # t.start()
 
     while 1:
         puredata = client_socket.recv(65535)
         client_socket.send(puredata)
 
         data = puredata.decode()
+
+        if data == 'bye':
+            client_socket.close()
+            break
 
         # pump_id = data[0:6]
         # sector = dbReq.getSector(pump_id)
@@ -31,6 +37,9 @@ def wheh():
         print('connected client : ', addr[0], addr[1])
         print(len(data), data[0:6])
 
+        if data == 'bye':
+            client_socket.close()
+            break
         #에러처리
         if data[6:10] == 'FFFF':
 
@@ -800,4 +809,5 @@ def wheh():
         #     dbReq.postSector(pump_id, form)
 
 
-wheh()
+if __name__ == '__main__':
+    run_server()

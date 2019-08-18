@@ -11,7 +11,7 @@ import socket
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
-def run(HOST='127.0.0.1', PORT=8000):
+def run_client(HOST='127.0.0.1', PORT=8000):
     socket.connect((HOST, PORT))
 
     while 1:
@@ -20,6 +20,10 @@ def run(HOST='127.0.0.1', PORT=8000):
         data2 = socket.recv(65535)
         print('data received : ', data2.decode())
 
+        if data == 'bye':
+            socket.close()
+            break
+
         #socket.close()
 if __name__ == '__main__':
-    run()
+    run_client()

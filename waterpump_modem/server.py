@@ -7,24 +7,35 @@ import dbReq
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-
-
-
 def run_server(HOST='127.0.0.1', PORT=8000):
+
     server_socket.bind((HOST, PORT))
-    server_socket.listen()
-    client_socket, addr = server_socket.accept()
+    while True:
+        server_socket.listen()
+        client_socket, addr = server_socket.accept()
+        # 새 연결이 생성되면 새 스레드에서 에코잉을 처리하게 한다.
+        t = threading.Thread(target=echo_handler, args=(client_socket, addr))
+        t. start()
+    
+    server_socket.close()
+
+
+def echo_handler(client_socket, addr, terminator='bye'):
+    '''개별 연결에 대한 에코잉을 처리하는 핸들러'''
+    while True:
+
+
     # t = threading.Thread(target=run_server, args=)
     # t.setDaemon(True)
     # t.start()
 
-    while 1:
         puredata = client_socket.recv(65535)
         client_socket.send(puredata)
 
         data = puredata.decode()
 
-        if data == 'bye':
+        if data == terminator:
+            print('client closed: ', addr[0], addr[1])
             client_socket.close()
             break
 
@@ -37,9 +48,7 @@ def run_server(HOST='127.0.0.1', PORT=8000):
         print('connected client : ', addr[0], addr[1])
         print(len(data), data[0:6])
 
-        if data == 'bye':
-            client_socket.close()
-            break
+   
         #에러처리
         if data[6:10] == 'FFFF':
 

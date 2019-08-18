@@ -25,9 +25,9 @@ const RenderFeed = props => (
         <div className={styles.modemName}>
           모뎀번호 : {props.sector.modem_number}
         </div>
-        <div className={styles.mapButton}>
+        {/* <div className={styles.mapButton}>
           <FontAwesomeIcon icon={faMapMarkedAlt} />
-        </div>
+        </div> */}
 
         <div className={styles.connectBox}>
           <div className={styles.connect}>
@@ -46,12 +46,22 @@ const RenderFeed = props => (
       </div>
       <div className={styles.box}>
         <div className={styles.row1}>
-          <div className={styles.boxFont}>흡입압력:</div>
-          <div className={styles.boxValue}>
-            {props.sector.suction_pressure} Bar
-          </div>
-          <div className={styles.boxFont}>유량:</div>
-          <div className={styles.boxValue}>{props.sector.discharge} m^3/s</div>
+          {props.sector.suction_pressure == "00.00" ? null : (
+            <div className={styles.row2}>
+              <div className={styles.boxFont}>흡입압력:</div>
+              <div className={styles.boxValue}>
+                {props.sector.suction_pressure} Bar
+              </div>
+            </div>
+          )}
+          {props.sector.discharge == "0000" ? null : (
+            <div className={styles.row2}>
+              <div className={styles.boxFont}>유량:</div>
+              <div className={styles.boxValue}>
+                {props.sector.discharge} m^3/s
+              </div>
+            </div>
+          )}
         </div>
         <div className={styles.row1}>
           <div className={styles.boxFont}>토출압력:</div>
@@ -73,7 +83,13 @@ const RenderFeed = props => (
         </div>
 
         <div className={styles.updateBox}>
-          최종 업데이트 : {props.sector.updated_at}
+          <div className={styles.updateTitle}>최종 업데이트 :</div>
+          <div className={styles.updateDate}>
+            {props.sector.updated_at.slice(0, 4)}년{" "}
+            {props.sector.updated_at.slice(5, 7)}월{" "}
+            {props.sector.updated_at.slice(8, 10)}일{" "}
+            {props.sector.updated_at.slice(11, 19)}
+          </div>
         </div>
       </div>
       <div className={styles.sectorComponent}>

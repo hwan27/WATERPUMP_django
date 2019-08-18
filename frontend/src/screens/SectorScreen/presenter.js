@@ -60,7 +60,10 @@ const RenderFeed = props => (
                     <div onClick={props.update_pressure} className={styles.boxButton}>입력</div>
                 </div>
             
-            <div className={styles.updateBox}>최종 업데이트 :  {props.sector.updated_at}</div>
+            <div className={styles.updateBox}>
+                <div className={styles.updateTitle}>최종 업데이트 :</div>
+                <div className={styles.updateDate}>{props.sector.updated_at}</div>
+            </div>
             </div>
             <div className={styles.sectorComponent}>
             <SectorComponent {...props} />

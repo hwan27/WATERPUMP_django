@@ -148,15 +148,29 @@ ul {
 }
 
 .updateBox {
-  width: 30vw;
-  margin-left: 10vw;
-  color: #3c3c3c;
-  font-size:1.3vw;
-  font-weight: 600;
+  width: 40vw;
+  margin-left: 5vw;
+  margin-bottom: 0.8vw;
   text-align: center;
   padding: 1em;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
   // border-bottom: 1px solid #4db8eb;
   
+}
+
+.updateTitle {
+  color: #3c3c3c;
+  font-size:1.5vw;
+  font-weight: 500;
+}
+
+.updateDate {
+  color: #00aed9;
+  font-size:1.5vw;
+  font-weight: 600;
+  margin-left: 1em;
 }
 
 .sectorComponent {

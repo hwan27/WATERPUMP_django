@@ -1,9 +1,14 @@
 import React from "react";
+import styles from "./styles.module.scss";
+import pumpImg from "../../images/whitePump.gif";
 
 const Pump4 = props => (
     <div>
         <div>
-            <span>1번펌프: </span>
+            <div className={styles.pump}>
+                <img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>
+                <div className={styles.pumpTitle}>1번펌프</div>
+            </div>
             {props.sector.pump_1_auto ? <span>자동</span> : <span>수동</span>}
             {props.sector.pump_1_operating_rate}
             {props.sector.pump_1_current}

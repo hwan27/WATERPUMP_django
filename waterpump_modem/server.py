@@ -22,10 +22,10 @@ def wheh():
 
         data = puredata.decode()
 
-        pump_id = data[0:6]
-        sector = dbReq.getSector(pump_id)
-        sector_title = sector['title']
-        managing = sector['city']
+        # pump_id = data[0:6]
+        # sector = dbReq.getSector(pump_id)
+        # sector_title = sector['title']
+        # managing = sector['city']
 
         print('receive data : ', data)
         print('connected client : ', addr[0], addr[1])
@@ -34,6 +34,19 @@ def wheh():
         #에러처리
         if data[6:10] == 'FFFF':
 
+            pump_id = data[0:6]
+            sector = dbReq.getSector(pump_id)
+            sector_title = sector['title']
+            managing = sector['city']
+            disorder_default = '0000'
+
+            pump_count = data[13]
+
+            if data[11] == '0':
+
+                pump_open = False
+                low_pressure = False
+
             if data[11] == '1':
 
                 pump_open = True
@@ -41,11 +54,11 @@ def wheh():
 
                 push_message = '문열림'
 
-                form = {'pump_open': pump_open,
-                        'low_pressure': low_pressure,
-                        }
+                # form = {'pump_open': pump_open,
+                #         'low_pressure': low_pressure,
+                #         }
 
-                dbReq.postSector(pump_id, form)
+                # dbReq.postSector(pump_id, form)
                 fcmReq.fcmReq(managing, sector_title, push_message)
 
             if data[11] == '2':
@@ -55,11 +68,11 @@ def wheh():
 
                 push_message = '저압'
 
-                form = {'pump_open': pump_open,
-                        'low_pressure': low_pressure,
-                        }
+                # form = {'pump_open': pump_open,
+                #         'low_pressure': low_pressure,
+                #         }
 
-                dbReq.postSector(pump_id, form)
+                # dbReq.postSector(pump_id, form)
                 fcmReq.fcmReq(managing, sector_title, push_message)
 
             if data[11] == '3':
@@ -69,24 +82,281 @@ def wheh():
 
                 push_message = '문열림/저압'
 
-                form = {'pump_open': pump_open,
-                        'low_pressure': low_pressure,
-                        }
+                # form = {'pump_open': pump_open,
+                #         'low_pressure': low_pressure,
+                #         }
 
-                dbReq.postSector(pump_id, form)
+                # dbReq.postSector(pump_id, form)
                 fcmReq.fcmReq(managing, sector_title, push_message)
 
-            if data[12] == '1':
+            if data[14] == '0':
+
+                pump_1_low_water = False
+
+            if data[14] == '1':
 
                 pump_1_low_water = True
-                push_message = '1번모터 저수위'
 
-                form = {
-                    'pump_1_low_water': pump_1_low_water
+                push_message = '1번펌프 저수위'
+
+                fcmReq.fcmReq(managing, sector_title, push_message)
+
+            if data[15] == '0':
+
+                pump_2_low_water = False
+
+            if data[15] == '1':
+
+                pump_2_low_water = True
+
+                push_message = '2번펌프 저수위'
+
+                fcmReq.fcmReq(managing, sector_title, push_message)
+                
+            if data[16] == '0':
+
+                pump_3_low_water = False
+
+            if data[16] == '1':
+
+                pump_3_low_water = True
+
+                push_message = '3번펌프 저수위'
+
+                fcmReq.fcmReq(managing, sector_title, push_message)
+                
+            if data[17] == '0':
+
+                pump_4_low_water = False
+
+            if data[17] == '1':
+
+                pump_4_low_water = True
+
+                push_message = '4번펌프 저수위'
+
+                fcmReq.fcmReq(managing, sector_title, push_message)
+
+            if pump_count == '1':
+
+                pump_1_disorder_a = data[18:22]
+                pump_1_disorder_b = data[22:26]
+
+                form = {'pump_open': pump_open,
+                'low_pressure': low_pressure,
+                'pump_1_low_water': pump_1_low_water,
+                'pump_1_disorder_a': pump_1_disorder_a,
+                'pump_1_disorder_b': pump_1_disorder_b,
+                'pump_2_low_water': False,
+                'pump_2_disorder_a': disorder_default,
+                'pump_2_disorder_b': disorder_default,
+                'pump_3_low_water': False,
+                'pump_3_disorder_a': disorder_default,
+                'pump_3_disorder_b': disorder_default,
+                'pump_4_low_water': False,
+                'pump_4_disorder_a': disorder_default,
+                'pump_4_disorder_b': disorder_default,
                 }
 
-                dbReq.postSector(pump_id, form)
-                fcmReq.fcmReq(managing, sector_title, push_message)
+                if pump_1_disorder_a != disorder_default:
+
+                    push_message = '1번펌프 고장 A: ' + pump_1_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_1_disorder_b != disorder_default:
+
+                    push_message = '1번펌프 고장 B: ' + pump_1_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+            if pump_count == '2':
+
+                pump_1_disorder_a = data[18:22]
+                pump_1_disorder_b = data[22:26]
+                pump_2_disorder_a = data[26:30]
+                pump_2_disorder_b = data[30:34]
+
+                form = {'pump_open': pump_open,
+                'low_pressure': low_pressure,
+                'pump_1_low_water': pump_1_low_water,
+                'pump_1_disorder_a': pump_1_disorder_a,
+                'pump_1_disorder_b': pump_1_disorder_b,
+                'pump_2_low_water': pump_2_low_water,
+                'pump_2_disorder_a': pump_2_disorder_a,
+                'pump_2_disorder_b': pump_2_disorder_b,
+                'pump_3_low_water': False,
+                'pump_3_disorder_a': disorder_default,
+                'pump_3_disorder_b': disorder_default,
+                'pump_4_low_water': False,
+                'pump_4_disorder_a': disorder_default,
+                'pump_4_disorder_b': disorder_default,
+                }
+
+                if pump_1_disorder_a != disorder_default:
+
+                    push_message = '1번펌프 고장 A: ' + pump_1_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_1_disorder_b != disorder_default:
+
+                    push_message = '1번펌프 고장 B: ' + pump_1_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                if pump_2_disorder_a != disorder_default:
+
+                    push_message = '2번펌프 고장 A: ' + pump_2_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_2_disorder_b != disorder_default:
+
+                    push_message = '2번펌프 고장 B: ' + pump_2_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+            if pump_count == '3':
+
+                pump_1_disorder_a = data[18:22]
+                pump_1_disorder_b = data[22:26]
+                pump_2_disorder_a = data[26:30]
+                pump_2_disorder_b = data[30:34]
+                pump_3_disorder_a = data[34:38]
+                pump_3_disorder_b = data[38:42]
+
+                form = {'pump_open': pump_open,
+                'low_pressure': low_pressure,
+                'pump_1_low_water': pump_1_low_water,
+                'pump_1_disorder_a': pump_1_disorder_a,
+                'pump_1_disorder_b': pump_1_disorder_b,
+                'pump_2_low_water': pump_2_low_water,
+                'pump_2_disorder_a': pump_2_disorder_a,
+                'pump_2_disorder_b': pump_2_disorder_b,
+                'pump_3_low_water': pump_3_low_water,
+                'pump_3_disorder_a': pump_3_disorder_a,
+                'pump_3_disorder_b': pump_3_disorder_b,
+                'pump_4_low_water': False,
+                'pump_4_disorder_a': disorder_default,
+                'pump_4_disorder_b': disorder_default,
+                }
+
+                if pump_1_disorder_a != disorder_default:
+
+                    push_message = '1번펌프 고장 A: ' + pump_1_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_1_disorder_b != disorder_default:
+
+                    push_message = '1번펌프 고장 B: ' + pump_1_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                if pump_2_disorder_a != disorder_default:
+
+                    push_message = '2번펌프 고장 A: ' + pump_2_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_2_disorder_b != disorder_default:
+
+                    push_message = '2번펌프 고장 B: ' + pump_2_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                if pump_3_disorder_a != disorder_default:
+
+                    push_message = '3번펌프 고장 A: ' + pump_3_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_3_disorder_b != disorder_default:
+
+                    push_message = '3번펌프 고장 B: ' + pump_3_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+            if pump_count == '4':
+
+                pump_1_disorder_a = data[18:22]
+                pump_1_disorder_b = data[22:26]
+                pump_2_disorder_a = data[26:30]
+                pump_2_disorder_b = data[30:34]
+                pump_3_disorder_a = data[34:38]
+                pump_3_disorder_b = data[38:42]
+                pump_4_disorder_a = data[42:46]
+                pump_4_disorder_b = data[46:50]
+
+                form = {'pump_open': pump_open,
+                'low_pressure': low_pressure,
+                'pump_1_low_water': pump_1_low_water,
+                'pump_1_disorder_a': pump_1_disorder_a,
+                'pump_1_disorder_b': pump_1_disorder_b,
+                'pump_2_low_water': pump_2_low_water,
+                'pump_2_disorder_a': pump_2_disorder_a,
+                'pump_2_disorder_b': pump_2_disorder_b,
+                'pump_3_low_water': pump_3_low_water,
+                'pump_3_disorder_a': pump_3_disorder_a,
+                'pump_3_disorder_b': pump_3_disorder_b,
+                'pump_4_low_water': pump_4_low_water,
+                'pump_4_disorder_a': pump_4_disorder_a,
+                'pump_4_disorder_b': pump_4_disorder_b,
+                }
+
+                if pump_1_disorder_a != disorder_default:
+
+                    push_message = '1번펌프 고장 A: ' + pump_1_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_1_disorder_b != disorder_default:
+
+                    push_message = '1번펌프 고장 B: ' + pump_1_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                if pump_2_disorder_a != disorder_default:
+
+                    push_message = '2번펌프 고장 A: ' + pump_2_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_2_disorder_b != disorder_default:
+
+                    push_message = '2번펌프 고장 B: ' + pump_2_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                if pump_3_disorder_a != disorder_default:
+
+                    push_message = '3번펌프 고장 A: ' + pump_3_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_3_disorder_b != disorder_default:
+
+                    push_message = '3번펌프 고장 B: ' + pump_3_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                if pump_4_disorder_a != disorder_default:
+
+                    push_message = '4번펌프 고장 A: ' + pump_4_disorder_a
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+                
+                if pump_4_disorder_b != disorder_default:
+
+                    push_message = '4번펌프 고장 B: ' + pump_4_disorder_b
+                    fcmReq.fcmReq(managing, sector_title, push_message)
+
+            print(form)
+
+            dbReq.postSector(pump_id, form)
+            # if data[12] == '1':
+
+            #     pump_1_low_water = True
+            #     push_message = '1번모터 저수위'
+
+            #     form = {
+            #         'pump_1_low_water': pump_1_low_water
+            #     }
+
+            #     dbReq.postSector(pump_id, form)
+            #     fcmReq.fcmReq(managing, sector_title, push_message)
 
             #dbReq.postSector(pump_id, form)
 
@@ -102,8 +372,13 @@ def wheh():
         # print('모터1 전력: ' + data[34:38])
 
         #일반 메세지
-        else:
+        elif data[6:9] == '000': 
+
             pump_id = data[0:6]
+            sector = dbReq.getSector(pump_id)
+            sector_title = sector['title']
+            managing = sector['city']
+            #pump_id = data[0:6]
             pump_count = data[9]
             discharge_pressure = data[14:16]+"."+data[16:18]
             suction_pressure = data[18:20]+"."+data[20:22]

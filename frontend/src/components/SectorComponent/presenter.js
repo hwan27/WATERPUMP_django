@@ -23,15 +23,24 @@ const SectorComponent = props => {
             <div className={styles.alert}>
             {props.sector.pump_open ? 
             <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>문열림</div> : null}
-            {props.sector.low_pressure ? <span>저압</span> : null}
-            {props.sector.pump_1_disorder ? <span>펌프1 고장</span> : null}
-            {props.sector.pump_1_low_water ? <span>펌프1 수위이상</span> : null}
-            {props.sector.pump_2_disorder ? <span>펌프2 고장</span> : null}
-            {props.sector.pump_2_low_water ? <span>펌프2 수위이상</span> : null}
-            {props.sector.pump_3_disorder ? <span>펌프3 고장</span> : null}
-            {props.sector.pump_3_low_water ? <span>펌프3 수위이상</span> : null}
-            {props.sector.pump_4_disorder ? <span>펌프4 고장</span> : null}
-            {props.sector.pump_4_low_water ? <span>펌프4 수위이상</span> : null}
+            {props.sector.low_pressure ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>저압</div> : null}
+            {props.sector.pump_1_disorder ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>펌프1 고장</div> : null}
+            {props.sector.pump_1_low_water ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>펌프1 수위이상</div> : null}
+            {props.sector.pump_2_disorder ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>펌프2 고장</div> : null}
+            {props.sector.pump_2_low_water ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>펌프2 수위이상</div> : null}
+            {props.sector.pump_3_disorder ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>펌프3 고장</div> : null}
+            {props.sector.pump_3_low_water ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>펌프3 수위이상</div> : null}
+            {props.sector.pump_4_disorder ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>펌프4 고장</div> : null}
+            {props.sector.pump_4_low_water ? 
+            <div className={styles.alertFont}><FontAwesomeIcon icon={faExclamationTriangle} className={styles.alertIcon}/>펌프4 수위이상</div> : null}
             </div>
         </div>
     );

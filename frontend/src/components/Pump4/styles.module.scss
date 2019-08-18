@@ -8,8 +8,9 @@
 
 .pumpBoxes {
     display: flex;
-    width: 100vw;
     height: 30vh;
+    justify-content: space-between;
+    margin-left: 1vw;
 }
 
 .pump {
@@ -39,7 +40,7 @@
 }
 
 .detail {
-    margin-top: 7vw;
+    margin-top: 5.5vw;
     width: 22vw;
     font-size: 1.5vw;
     background-color: #fff;

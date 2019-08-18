@@ -39,13 +39,13 @@ const RenderFeed = props => (
             <div className={styles.box}>
                 <div className={styles.row1}>
                     <div className={styles.boxFont}>흡입압력:</div>
-                    <div className={styles.boxValue}>{props.sector.suction_pressure}</div>
+                    <div className={styles.boxValue}>{props.sector.suction_pressure} Bar</div>
                     <div className={styles.boxFont}>유량:</div>
-                    <div className={styles.boxValue}>{props.sector.discharge}</div>
+                    <div className={styles.boxValue}>{props.sector.discharge} m^3/s</div>
                 </div>
                 <div className={styles.row1}>
                     <div className={styles.boxFont}>토출압력:</div>
-                    <div className={styles.boxValue}>{props.sector.discharge_pressure}</div>
+                    <div className={styles.boxValue}>{props.sector.discharge_pressure} Bar</div>
                 
                     
                     <div className={styles.boxFont}>설정압력:</div>
@@ -59,8 +59,9 @@ const RenderFeed = props => (
                     </form>
                     <div onClick={props.update_pressure} className={styles.boxButton}>입력</div>
                 </div>
+            
+            <div className={styles.updateBox}>최종 업데이트 :  {props.sector.updated_at}</div>
             </div>
-            <div className={styles.updateBox}>최종 업데이트: {props.sector.updated_at}</div>
             <div className={styles.sectorComponent}>
             <SectorComponent {...props} />
             </div>

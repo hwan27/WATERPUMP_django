@@ -8,8 +8,9 @@
 
 .pumpBoxes {
     display: flex;
-    width: 100vw;
     height: 30vh;
+    justify-content: space-between;
+    margin-left: 1vw;
 }
 
 .pump {
@@ -17,10 +18,12 @@
     width: 25vw;
 }
 .pumpTitle {
-    font-size: 1.3vw;
+    font-size: 1.4vw;
     position: absolute;
-    right: 5vw;
+    right: 4.4vw;
     top:1.6vw;
+    color: #13738a;
+    font-weight: 700;
 }
 
 .pumpImg {
@@ -37,11 +40,14 @@
 }
 
 .detail {
-    margin-top: 7vw;
+    margin-top: 5.5vw;
     width: 22vw;
     font-size: 1.5vw;
     background-color: #fff;
     border-radius: 1em;
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
 }
 
 .row {
@@ -52,30 +58,36 @@
 .name {
     width:5vw;
     margin-right: 1vw;
+    color: #3c3c3c;
+    font-weight: 500;
 }
 
 .value {
     width: 6vw;
+    color: #00aed9;
+    font-weight: 600;
 }
 
 .auto {
-    color: red;
+    color:#ee6265;
     font-size: 1.5vw;
     font-weight: 500;
     text-align: center;
     padding:0.5em;
     margin: 0.5vw;
     border-bottom: 1px solid gray;
+    font-weight: 600;
 }
 
 .manual {
-    color: blue;
+    color: #00aed9;
     font-size: 1.5vw;
     font-weight: 500;
     text-align: center;
     padding:0.5em;
     margin: 0.5vw;
     border-bottom: 1px solid gray;
+    font-weight: 600;
 }
 
 .bottom {

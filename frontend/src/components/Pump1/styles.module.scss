@@ -1,4 +1,97 @@
-.pumpOne {
-    background-image:
-      url("../../images/whitePump.gif")
+// .pump {
+//     // width: 30vw;
+//     background-image: 
+//         url(../../images/whitePump.gif);
+//     background-repeat: no-repeat;
+//     background-size: contain;
+// }
+
+.pumpBoxes {
+  display: flex;
+  width: 100vw;
+  height: 30vh;
+  justify-content: center;
+}
+
+.pump {
+  position: relative;
+  width: 25vw;
+}
+.pumpTitle {
+  font-size: 1.4vw;
+  position: absolute;
+  right: 4.4vw;
+  top:1.6vw;
+  color: #13738a;
+  font-weight: 700;
+}
+
+.pumpImg {
+  width: 22vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pumpBox {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.detail {
+  margin-top: 7vw;
+  width: 22vw;
+  font-size: 1.5vw;
+  background-color: #fff;
+  border-radius: 1em;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+-moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+}
+
+.row {
+  display: flex;
+  margin: 0.3vw;
+}
+
+.name {
+  width:5vw;
+  margin-right: 1vw;
+  color: #3c3c3c;
+  font-weight: 500;
+}
+
+.value {
+  width: 6vw;
+  color: #00aed9;
+  font-weight: 600;
+}
+
+.auto {
+  color:#ee6265;
+  font-size: 1.5vw;
+  font-weight: 500;
+  text-align: center;
+  padding:0.5em;
+  margin: 0.5vw;
+  border-bottom: 1px solid gray;
+  font-weight: 600;
+}
+
+.manual {
+  color: #00aed9;
+  font-size: 1.5vw;
+  font-weight: 500;
+  text-align: center;
+  padding:0.5em;
+  margin: 0.5vw;
+  border-bottom: 1px solid gray;
+  font-weight: 600;
+}
+
+.bottom {
+  margin-top:1vw;
+  margin-left: 5vw;
+  margin-bottom: 1vw;
 }

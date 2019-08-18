@@ -5,21 +5,38 @@
 //     background-repeat: no-repeat;
 //     background-size: contain;
 // }
+
+.pumpBoxes {
+    display: flex;
+    width: 100vw;
+    height: 30vh;
+}
+
 .pump {
     position: relative;
     width: 25vw;
 }
 .pumpTitle {
-    font-size: 2vw;
+    font-size: 1.3vw;
     position: absolute;
-    right: 10%;
-    top:2vw;
+    right: 5vw;
+    top:1.6vw;
 }
 
 .pumpImg {
-    width: 25vw;
+    width: 22vw;
     position: absolute;
     left: 0;
     top: 0;
 }
 
+.pumpBox {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.detail {
+    margin-top: 5vw;
+    font-size: 1.5vw;
+}

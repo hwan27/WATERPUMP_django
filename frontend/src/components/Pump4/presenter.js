@@ -3,42 +3,64 @@ import styles from "./styles.module.scss";
 import pumpImg from "../../images/whitePump.gif";
 
 const Pump4 = props => (
-    <div>
-        <div>
+    <div className={styles.pumpBoxes}>
+
+        <div className={styles.pumpBox}>
             <div className={styles.pump}>
                 <img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>
                 <div className={styles.pumpTitle}>1번펌프</div>
             </div>
+            <div className={styles.detail}>
             {props.sector.pump_1_auto ? <span>자동</span> : <span>수동</span>}
             {props.sector.pump_1_operating_rate}
             {props.sector.pump_1_current}
             {props.sector.pump_1_freq}
             {props.sector.pump_1_power}
+            </div>
         </div>
-        <div>
-            <span>2번펌프</span>
+
+        <div className={styles.pumpBox}>
+            <div className={styles.pump}>
+                <img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>
+                <div className={styles.pumpTitle}>2번펌프</div>
+            </div>
+            <div className={styles.detail}>
             {props.sector.pump_2_auto ? <span>자동</span> : <span>수동</span>}
             {props.sector.pump_2_operating_rate}
             {props.sector.pump_2_current}
             {props.sector.pump_2_freq}
             {props.sector.pump_2_power}
+            </div>
         </div>
-        <div>
-            <span>3번펌프</span>
+
+        <div className={styles.pumpBox}>
+                <div className={styles.pump}>
+                    <img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>
+                    <div className={styles.pumpTitle}>3번펌프</div>
+                </div>
+            <div className={styles.detail}>
             {props.sector.pump_3_auto ? <span>자동</span> : <span>수동</span>}
             {props.sector.pump_3_operating_rate}
             {props.sector.pump_3_current}
             {props.sector.pump_3_freq}
             {props.sector.pump_3_power}
+            </div>
         </div>
-        <div>
-            <span>4번펌프</span>
+
+        <div className={styles.pumpBox}>
+            <div className={styles.pump}>
+                <img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>
+                <div className={styles.pumpTitle}>4번펌프</div>
+            </div>
+            <div className={styles.detail}>
             {props.sector.pump_4_auto ? <span>자동</span> : <span>수동</span>}
             {props.sector.pump_4_operating_rate}
             {props.sector.pump_4_current}
             {props.sector.pump_4_freq}
             {props.sector.pump_4_power}
+            </div>
         </div>
+
     </div>
 );
 

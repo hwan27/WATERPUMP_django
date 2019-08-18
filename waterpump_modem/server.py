@@ -114,21 +114,21 @@ def wheh():
             pump_3_status = data[12]
             pump_4_status = data[13]
 
-            pump_1_current = data[26:28]+"."+data[28:30]
-            pump_1_freq = data[30:32]+"."+data[32:34]
-            pump_1_power = data[34:36]+"."+data[36:38]
+            # pump_1_current = data[26:28]+"."+data[28:30]
+            # pump_1_freq = data[30:32]+"."+data[32:34]
+            # pump_1_power = data[34:36]+"."+data[36:38]
 
-            pump_2_current = data[38:40]+"."+data[40:42]
-            pump_2_freq = data[42:44]+"."+data[44:46]
-            pump_2_power = data[46:48]+"."+data[48:50]
+            # pump_2_current = data[38:40]+"."+data[40:42]
+            # pump_2_freq = data[42:44]+"."+data[44:46]
+            # pump_2_power = data[46:48]+"."+data[48:50]
 
-            pump_3_current = data[50:52]+"."+data[52:54]
-            pump_3_freq = data[54:56]+"."+data[56:58]
-            pump_3_power = data[58:60]+"."+data[60:62]
+            # pump_3_current = data[50:52]+"."+data[52:54]
+            # pump_3_freq = data[54:56]+"."+data[56:58]
+            # pump_3_power = data[58:60]+"."+data[60:62]
 
-            pump_4_current = data[62:64]+"."+data[64:66]
-            pump_4_freq = data[66:68]+"."+data[68:70]
-            pump_4_power = data[70:72]+"."+data[72:74]
+            # pump_4_current = data[62:64]+"."+data[64:66]
+            # pump_4_freq = data[66:68]+"."+data[68:70]
+            # pump_4_power = data[70:72]+"."+data[72:74]
 
             if pump_1_status == '1':
                     # 펌프1 on/수동
@@ -192,36 +192,21 @@ def wheh():
 
             if pump_count == '1':
 
-                form = {'pump_count': pump_count,
-                        'discharge_pressure': discharge_pressure,
-                        'suction_pressure': suction_pressure,
-                        'discharge': discharge,
-                        'pump_1_current': pump_1_current,
-                        'pump_1_freq': pump_1_freq,
-                        'pump_1_power': pump_1_power,
-                        'pump_1_auto': pump_1_auto,
-                        'pump_1_on': pump_1_on
-                        }
+                pump_1_current = data[26:28]+"."+data[28:30]
+                pump_1_freq = float(data[30:32]+"."+data[32:34])
+                pump_1_power = data[34:36]+"."+data[36:38]
 
-            if pump_count == '2':
+                pump_2_current = 0
+                pump_2_freq = 0
+                pump_2_power = 0
 
-                form = {'pump_count': pump_count,
-                        'discharge_pressure': discharge_pressure,
-                        'suction_pressure': suction_pressure,
-                        'discharge': discharge,
-                        'pump_1_current': pump_1_current,
-                        'pump_2_current': pump_2_current,
-                        'pump_1_freq': pump_1_freq,
-                        'pump_2_freq': pump_2_freq,
-                        'pump_1_power': pump_1_power,
-                        'pump_2_power': pump_2_power,
-                        'pump_1_auto': pump_1_auto,
-                        'pump_2_auto': pump_2_auto,
-                        'pump_1_on': pump_1_on,
-                        'pump_2_on': pump_2_on,
-                        }
+                pump_3_current = 0
+                pump_3_freq = 0
+                pump_3_power = 0
 
-            if pump_count == '3':
+                pump_4_current = 0
+                pump_4_freq = 0
+                pump_4_power = 0
 
                 form = {'pump_count': pump_count,
                         'discharge_pressure': discharge_pressure,
@@ -230,21 +215,130 @@ def wheh():
                         'pump_1_current': pump_1_current,
                         'pump_2_current': pump_2_current,
                         'pump_3_current': pump_3_current,
+                        'pump_4_current': pump_4_current,
                         'pump_1_freq': pump_1_freq,
                         'pump_2_freq': pump_2_freq,
                         'pump_3_freq': pump_3_freq,
+                        'pump_4_freq': pump_4_freq,
                         'pump_1_power': pump_1_power,
                         'pump_2_power': pump_2_power,
                         'pump_3_power': pump_3_power,
+                        'pump_4_power': pump_4_power,
                         'pump_1_auto': pump_1_auto,
                         'pump_2_auto': pump_2_auto,
                         'pump_3_auto': pump_3_auto,
+                        'pump_4_auto': pump_4_auto,
                         'pump_1_on': pump_1_on,
                         'pump_2_on': pump_2_on,
                         'pump_3_on': pump_3_on,
+                        'pump_4_on': pump_4_on
+                        }
+
+            if pump_count == '2':
+
+                pump_1_current = data[26:28]+"."+data[28:30]
+                pump_1_freq = float(data[30:32]+"."+data[32:34])
+                pump_1_power = data[34:36]+"."+data[36:38]
+
+                pump_2_current = data[38:40]+"."+data[40:42]
+                pump_2_freq = float(data[42:44]+"."+data[44:46])
+                pump_2_power = data[46:48]+"."+data[48:50]
+
+                pump_3_current = 0
+                pump_3_freq = 0
+                pump_3_power = 0
+
+                pump_4_current = 0
+                pump_4_freq = 0
+                pump_4_power = 0
+
+                form = {'pump_count': pump_count,
+                        'discharge_pressure': discharge_pressure,
+                        'suction_pressure': suction_pressure,
+                        'discharge': discharge,
+                        'pump_1_current': pump_1_current,
+                        'pump_2_current': pump_2_current,
+                        'pump_3_current': pump_3_current,
+                        'pump_4_current': pump_4_current,
+                        'pump_1_freq': pump_1_freq,
+                        'pump_2_freq': pump_2_freq,
+                        'pump_3_freq': pump_3_freq,
+                        'pump_4_freq': pump_4_freq,
+                        'pump_1_power': pump_1_power,
+                        'pump_2_power': pump_2_power,
+                        'pump_3_power': pump_3_power,
+                        'pump_4_power': pump_4_power,
+                        'pump_1_auto': pump_1_auto,
+                        'pump_2_auto': pump_2_auto,
+                        'pump_3_auto': pump_3_auto,
+                        'pump_4_auto': pump_4_auto,
+                        'pump_1_on': pump_1_on,
+                        'pump_2_on': pump_2_on,
+                        'pump_3_on': pump_3_on,
+                        'pump_4_on': pump_4_on
+                        }
+
+            if pump_count == '3':
+
+                pump_1_current = data[26:28]+"."+data[28:30]
+                pump_1_freq = float(data[30:32]+"."+data[32:34])
+                pump_1_power = data[34:36]+"."+data[36:38]
+
+                pump_2_current = data[38:40]+"."+data[40:42]
+                pump_2_freq = float(data[42:44]+"."+data[44:46])
+                pump_2_power = data[46:48]+"."+data[48:50]
+
+                pump_3_current = data[50:52]+"."+data[52:54]
+                pump_3_freq = float(data[54:56]+"."+data[56:58])
+                pump_3_power = data[58:60]+"."+data[60:62]
+
+                pump_4_current = 0
+                pump_4_freq = 0
+                pump_4_power = 0
+
+                form = {'pump_count': pump_count,
+                        'discharge_pressure': discharge_pressure,
+                        'suction_pressure': suction_pressure,
+                        'discharge': discharge,
+                        'pump_1_current': pump_1_current,
+                        'pump_2_current': pump_2_current,
+                        'pump_3_current': pump_3_current,
+                        'pump_4_current': pump_4_current,
+                        'pump_1_freq': pump_1_freq,
+                        'pump_2_freq': pump_2_freq,
+                        'pump_3_freq': pump_3_freq,
+                        'pump_4_freq': pump_4_freq,
+                        'pump_1_power': pump_1_power,
+                        'pump_2_power': pump_2_power,
+                        'pump_3_power': pump_3_power,
+                        'pump_4_power': pump_4_power,
+                        'pump_1_auto': pump_1_auto,
+                        'pump_2_auto': pump_2_auto,
+                        'pump_3_auto': pump_3_auto,
+                        'pump_4_auto': pump_4_auto,
+                        'pump_1_on': pump_1_on,
+                        'pump_2_on': pump_2_on,
+                        'pump_3_on': pump_3_on,
+                        'pump_4_on': pump_4_on
                         }
 
             if pump_count == '4':
+
+                pump_1_current = data[26:28]+"."+data[28:30]
+                pump_1_freq = float(data[30:32]+"."+data[32:34])
+                pump_1_power = data[34:36]+"."+data[36:38]
+
+                pump_2_current = data[38:40]+"."+data[40:42]
+                pump_2_freq = float(data[42:44]+"."+data[44:46])
+                pump_2_power = data[46:48]+"."+data[48:50]
+
+                pump_3_current = data[50:52]+"."+data[52:54]
+                pump_3_freq = float(data[54:56]+"."+data[56:58])
+                pump_3_power = data[58:60]+"."+data[60:62]
+
+                pump_4_current = data[62:64]+"."+data[64:66]
+                pump_4_freq = float(data[66:68]+"."+data[68:70])
+                pump_4_power = data[70:72]+"."+data[72:74]
 
                 form = {'pump_count': pump_count,
                         'discharge_pressure': discharge_pressure,

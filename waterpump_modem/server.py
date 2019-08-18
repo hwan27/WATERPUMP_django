@@ -404,6 +404,10 @@ def wheh():
             # pump_4_current = data[62:64]+"."+data[64:66]
             # pump_4_freq = data[66:68]+"."+data[68:70]
             # pump_4_power = data[70:72]+"."+data[72:74]
+            if pump_1_status == '0':
+                    # 펌프1 on/수동
+                pump_1_auto = False
+                pump_1_on = False
 
             if pump_1_status == '1':
                     # 펌프1 on/수동
@@ -420,6 +424,11 @@ def wheh():
                 pump_1_auto = True
                 pump_1_on = True
 
+            if pump_2_status == '0':
+                    # 펌프1 on/수동
+                pump_2_auto = False
+                pump_2_on = False
+
             if pump_2_status == '1':
                     # 펌프2 on/수동
                 pump_2_auto = False
@@ -435,6 +444,11 @@ def wheh():
                 pump_2_auto = True
                 pump_2_on = True
 
+            if pump_3_status == '0':
+                    # 펌프1 on/수동
+                pump_3_auto = False
+                pump_3_on = False
+
             if pump_3_status == '1':
                 # 펌프1 on/수동
                 pump_3_auto = False
@@ -449,6 +463,11 @@ def wheh():
                         # 펌프1 on/수동
                 pump_3_auto = True
                 pump_3_on = True
+
+            if pump_4_status == '0':
+                    # 펌프1 on/수동
+                pump_4_auto = False
+                pump_4_on = False
 
             if pump_4_status == '1':
                     # 펌프1 on/수동

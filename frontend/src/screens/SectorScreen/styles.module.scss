@@ -14,6 +14,7 @@ ul {
   align-items: center;
   margin-top: 1vw;
   margin-bottom: 1vw;
+  margin-top: 1.5vw;
 }
 
 .row1 {
@@ -43,12 +44,10 @@ ul {
 .mapButton {
   background-color: #fff;
   width: 4.5vw;
-  padding: 1em;
-  
+  padding: 0.4em;
   text-align: center;
-  
   border-radius: 0.7em;
-  font-size: 1.5vw;
+  font-size: 2.5vw;
   font-weight: 600;
   color: #00aed9;
   margin-left: 1em;
@@ -81,7 +80,7 @@ ul {
 }
 
 .connectPlz {
-  background-color: #4db8eb;
+  background-color: #00aed9;
   width: 6.5vw;
   padding: 1em;
   text-align: center;
@@ -102,6 +101,8 @@ ul {
   flex-direction: column;
   align-items: flex-start;
   margin-left: 25vw;
+  margin-bottom: 2vw;
+  margin-top: 1.5vw;
   border-radius: 1em;
   -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
   -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
@@ -134,28 +135,42 @@ ul {
 }
 
 .boxButton {
-  background-color: #4db8eb;
-  color: #fff;
+  // background-color: #4db8eb;
+  color: #4db8eb;
   text-align: center;
   margin-left: 1vw;
-  font-size:1.2vw;
-  padding: 1em;
-  border-radius: 1em;
+  font-size:2vw;
+  // padding: 1em;
+  // border-radius: 1em;
   -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
   -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
   box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
 }
 
 .updateBox {
-  width: 30vw;
-  margin-left: 10vw;
-  color: #3c3c3c;
-  font-size:1.3vw;
-  font-weight: 600;
+  width: 40vw;
+  margin-left: 5vw;
+  margin-bottom: 0.8vw;
   text-align: center;
   padding: 1em;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
   // border-bottom: 1px solid #4db8eb;
   
+}
+
+.updateTitle {
+  color: #3c3c3c;
+  font-size:1.5vw;
+  font-weight: 500;
+}
+
+.updateDate {
+  color: #00aed9;
+  font-size:1.5vw;
+  font-weight: 600;
+  margin-left: 1em;
 }
 
 .sectorComponent {

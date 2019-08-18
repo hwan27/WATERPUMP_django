@@ -9,8 +9,7 @@
 .pumpBoxes {
     display: flex;
     height: 30vh;
-    justify-content: space-between;
-    margin-left: 1vw;
+    justify-content: center;
 }
 
 .pump {
@@ -20,7 +19,7 @@
 .pumpTitle {
     font-size: 1.4vw;
     position: absolute;
-    right: 4.4vw;
+    right: 3vw;
     top:1.6vw;
     color: #13738a;
     font-weight: 700;
@@ -29,14 +28,16 @@
 .pumpImg {
     width: 22vw;
     position: absolute;
-    left: 0;
+    left: 1.5vw;
     top: 0;
 }
 
 .pumpBox {
     display: flex;
     flex-direction: column;
-    
+    width: 25vw;
+    justify-content: center;
+    align-items: center;
 }
 
 .detail {

@@ -8,6 +8,12 @@ ul {
   height: 100vh;
 }
 
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modemName {
   background-color: #fff;
   width: 20vw;
@@ -16,11 +22,25 @@ ul {
   text-align: center;
   border: 3px solid #00CDCD;
   border-radius: 2em;
-  margin-left: 32.5vw;
   margin-top: 1.3em;
   font-size: 1.2em;
   font-weight: 500;
   color: #4d7082;
+}
+
+.mapButton {
+  background-color: #fff;
+  width: 4.5vw;
+  padding: 0.6em;
+  margin-bottom: 5vh;
+  text-align: center;
+  
+  border-radius: 0.7em;
+  margin-top: 1.3em;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #4d7082;
+  margin-left: 1em;
 }
 
 .connectBox {
@@ -31,10 +51,59 @@ ul {
   background-color: #fff;
   width: 15vw;
   padding: 1em;
-  margin-left: 25vw;
+  margin-left: 5em;
   text-align: center;
   border-radius: 1em;
   color: #6c6c6c;
+}
+
+.connectEnd {
+  color: #f7727f
+}
+
+.connectPlz {
+  background-color: #fff;
+  width: 6.5vw;
+  padding: 1em;
+  text-align: center;
+  border-radius: 1em;
+  color: #6c6c6c;
+  margin-left: 1em;
+}
+
+.box {
+  background-color: #fff;
+  padding: 1em;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30vw;
+  border-radius: 1em;
+}
+
+.boxFont {
+  margin:1em;
+  width: 8vw;
+}
+
+.boxValue {
+  width: 6vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.updateBox {
+  width: 40vw;
+  color: #fff;
+  background-color: #4db8eb;
+  font-size:1.2em;
+  font-weight: 500;
+  text-align: center;
+  padding: 1em;
+  margin-left: 30vw;
+  border-radius: 1em;
+  margin-top: 1.5em;
 }
 
 .listText {

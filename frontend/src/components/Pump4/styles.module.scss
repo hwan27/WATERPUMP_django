@@ -1,0 +1,25 @@
+// .pump {
+//     // width: 30vw;
+//     background-image: 
+//         url(../../images/whitePump.gif);
+//     background-repeat: no-repeat;
+//     background-size: contain;
+// }
+.pump {
+    position: relative;
+    width: 25vw;
+}
+.pumpTitle {
+    font-size: 2vw;
+    position: absolute;
+    right: 10%;
+    top:2vw;
+}
+
+.pumpImg {
+    width: 25vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+

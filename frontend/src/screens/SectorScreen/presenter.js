@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import SectorComponent from "components/SectorComponent";
 import Navigation from "components/Navigation";
 
+
 const SectorScreen = props => {
     if (props.loading) {
         return <LoadingFeed />;
@@ -18,8 +19,10 @@ const RenderFeed = props => (
         <Navigation {...props} title={props.sector.title} />
 
         <div className={styles.feed}>
-
+            <div className={styles.row}>
             <div className={styles.modemName}>모뎀번호 : {props.sector.modem_number}</div>
+            <div className={styles.mapButton}>지도</div>
+            
             <div className={styles.connectBox}>
                 <div className={styles.connect}>
                     접속상태:{" "}
@@ -30,23 +33,34 @@ const RenderFeed = props => (
                     )}
                 </div>
 
-                <span onClick={props.refreshInterval}>접속요청</span>
+                <div onClick={props.refreshInterval} className={styles.connectPlz}>접속요청</div>
+                </div>
             </div>
-            <div>
-                <span>흡입압력: {props.sector.suction_pressure}</span>
-                <span>유량: {props.sector.discharge}</span>
-                <span>토출압력: {props.sector.discharge_pressure}</span>
-
-                <form>
-                    <span>설정압력: </span>
-                    <input
-                        value={props.setPressure}
-                        onChange={props.set_pressure}
-                    />
-                    <span onClick={props.update_pressure}>입력</span>
-                </form>
+            <div className={styles.box}>
+                <div className={styles.row}>
+                    <div className={styles.boxFont}>흡입압력:</div>
+                    <div className={styles.boxValue}>{props.sector.suction_pressure}</div>
+                    <div className={styles.boxFont}>유량:</div>
+                    <div className={styles.boxValue}>{props.sector.discharge}</div>
+                </div>
+                <div className={styles.row}>
+                    <div className={styles.boxFont}>토출압력:</div>
+                    <div className={styles.boxValue}>{props.sector.discharge_pressure}</div>
+                
+                    
+                    <div className={styles.boxFont}>설정압력:</div>
+                    <form>
+                        <input
+                            value={props.setPressure}
+                            onChange={props.set_pressure}
+                            className={styles.boxValue}
+                        />
+                    </form>
+                    <div onClick={props.update_pressure} className={styles.boxF}>입력</div>
+                </div>
             </div>
-            <span>최종 업데이트: {props.sector.updated_at}</span>
+            <div className={styles.updateBox}>최종 업데이트: {props.sector.updated_at}</div>
+           
             <SectorComponent {...props} />
         </div>
     </div>

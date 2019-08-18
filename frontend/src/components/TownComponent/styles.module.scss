@@ -1,8 +1,13 @@
 ul {
     list-style: none;
 }
+
+.container {
+    margin-top: 5vh;
+}
+
 .list {
-    width: 20vw;
+    width: 17vw;
 }
 .listText {
     margin: 0;
@@ -24,6 +29,8 @@ ul {
 .listText:hover {
     transform: scale(1.2);
 }
+
+
 
 // @media all and (min-aspect-ratio: 9/16) {
 //   .list {

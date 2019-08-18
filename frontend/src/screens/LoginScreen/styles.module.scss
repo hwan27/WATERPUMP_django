@@ -1,0 +1,34 @@
+.contariner {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 20vw;
+    height: 5vh;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 143, 229, 1);
+    margin-bottom: 3vh;
+    margin-left: 40vw;
+}
+
+.loginButton {
+    background-color: rgba(0, 143, 229, 1);
+    width: 20vw;
+    height: 5vh;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 0.5em;
+    margin-left: 40vw;
+    margin-top: 5vh;
+}
+
+.loginLogo {
+    width: 20vw;
+    margin-left: 40vw;
+    margin-top: 15vh;
+}

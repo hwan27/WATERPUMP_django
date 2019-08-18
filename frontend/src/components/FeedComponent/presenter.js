@@ -6,7 +6,7 @@ const FeedComponent = props => {
     return (
         <div id="pattern">
             <ul className={styles.list}>
-                <li>
+                <li className={styles.lli}>
                     <div onClick={props.click} className={styles.listText}>
                         {props.title}
                     </div>

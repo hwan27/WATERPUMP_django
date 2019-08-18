@@ -28,10 +28,22 @@ ul {
   margin-left: 3vw;
   width: 90vw;
   font-size: 1.3vw;
-  color:red;
-  font-weight: 500;
+  color:#f7727f;
+  font-weight: 600;
   padding: 1em;
   text-align: left;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  display: flex;
+}
+
+.alertFont {
+  margin-right: 1em;
+}
+
+.alertIcon {
+  margin-right: 0.5em;
 }
 
 @media all and (min-aspect-ratio: 9/16) {

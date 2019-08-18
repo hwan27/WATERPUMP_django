@@ -22,7 +22,7 @@ ul {
   align-items: center;
   margin-top: 1vw;
   margin-bottom: 1vw;
-  margin-left:3vw;
+  margin-left:6vw;
 }
 
 .modemName {
@@ -35,7 +35,10 @@ ul {
   font-size: 1.5vw;
   font-weight: 500;
   color: #4d7082;
-}
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  }
 
 .mapButton {
   background-color: #fff;
@@ -46,9 +49,12 @@ ul {
   
   border-radius: 0.7em;
   font-size: 1.5vw;
-  font-weight: 500;
-  color: #4d7082;
+  font-weight: 600;
+  color: #00aed9;
   margin-left: 1em;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
 }
 
 .connectBox {
@@ -64,44 +70,58 @@ ul {
   border-radius: 1em;
   color: #6c6c6c;
   font-size: 1.5vw;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
 }
 
 .connectEnd {
-  color: #f7727f
+  color: #f7727f;
+  font-weight:600;
 }
 
 .connectPlz {
-  background-color: #fff;
+  background-color: #4db8eb;
   width: 6.5vw;
   padding: 1em;
   text-align: center;
   border-radius: 1em;
-  color: #6c6c6c;
+  color: #fff;
   margin-left: 1em;
   font-size:1.5vw;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
 }
 
 .box {
   background-color: #fff;
   padding: 1em;
-  width: 40vw;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 30vw;
+  margin-left: 25vw;
   border-radius: 1em;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
 }
 
 .boxFont {
   width: 8vw;
   font-size:1.5vw;
+  color: #3c3c3c;
+  font-weight: 500;
 }
 
 .boxValue {
-  width: 6vw;
+  width: 10vw;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   font-size:1.5vw;
+  color: #00aed9;
+  font-weight: 600;
 }
 
 .boxValueInput {
@@ -121,19 +141,21 @@ ul {
   font-size:1.2vw;
   padding: 1em;
   border-radius: 1em;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(163,163,163,0.3);
 }
 
 .updateBox {
-  width: 40vw;
-  color: #fff;
-  background-color: #4db8eb;
+  width: 30vw;
+  margin-left: 10vw;
+  color: #3c3c3c;
   font-size:1.3vw;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   padding: 1em;
-  margin-left: 30vw;
-  border-radius: 1em;
-  margin-top: 1vw;
+  // border-bottom: 1px solid #4db8eb;
+  
 }
 
 .sectorComponent {

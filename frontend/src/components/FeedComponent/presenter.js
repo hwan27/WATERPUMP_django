@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 const FeedComponent = props => {
     return (
-        <div id="pattern">
+        <div id="pattern" className={styles.container}>
             <ul className={styles.list}>
                 <li className={styles.lli}>
                     <div onClick={props.click} className={styles.listText}>

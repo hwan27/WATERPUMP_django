@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 const TownComponent = props => {
     return (
-        <div id="pattern">
+        <div id="pattern" className={styles.container}>
             <ul className={styles.list}>
                 <li>
                     <div onClick={props.click} className={styles.listText}>

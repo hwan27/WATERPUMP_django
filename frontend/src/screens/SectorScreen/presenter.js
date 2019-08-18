@@ -14,20 +14,21 @@ const SectorScreen = props => {
 const LoadingFeed = () => null;
 
 const RenderFeed = props => (
-    <div>
+    <div className={styles.container}>
         <Navigation {...props} title={props.sector.title} />
 
         <div className={styles.feed}>
-            <div>모뎀번호: {props.sector.modem_number}</div>
-            <div>
-                <span>
+
+            <div className={styles.modemName}>모뎀번호 : {props.sector.modem_number}</div>
+            <div className={styles.connectBox}>
+                <div className={styles.connect}>
                     접속상태:{" "}
                     {props.isRefreshing ? (
                         <span>접속중</span>
                     ) : (
-                        <span>접속종료</span>
+                        <span className={styles.connectEnd}>접속종료</span>
                     )}
-                </span>
+                </div>
 
                 <span onClick={props.refreshInterval}>접속요청</span>
             </div>

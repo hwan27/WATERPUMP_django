@@ -13,10 +13,10 @@ ul {
 .listText {
     margin: 0;
     text-align: center;
-    padding: 10% 10%;
+    padding: 1em;
     color: #576b76;
     font-size: 2vw;
-    background-color: white;
+    background-color:#fff;
     border-radius: 0.5em;
     // border: 1px solid #4db8eb;
     box-shadow: 0px 3px 15px -10px rgba(0, 0, 0, 0.5);
@@ -29,6 +29,29 @@ ul {
 
 .listText:hover {
     transform: scale(1.2);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 11vw;
+    justify-content: space-between;
+    margin-top: 3vw;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.wifi {
+    width: 2.7vw;
+    height: 2.6vw;
+    
+}
+
+.waterTap {
+    width: 2.8vw;
 }
 
 

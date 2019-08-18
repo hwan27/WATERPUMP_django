@@ -78,9 +78,9 @@ class Sector(TimeStampedModel):
     pump_1_disorder_b = models.CharField(max_length=120, blank=True)
     pump_1_low_water = models.BooleanField(default=False)
     pump_1_auto = models.BooleanField(default=False)  # 수동/자동
-    #pump_1_operating_rate = models.FloatField()  # 가동률
+    #pump_1_operating_rate = models.CharField(max_length=120, blank=True)  # 가동률
     pump_1_current = models.CharField(max_length=120, blank=True)  # 전류
-    pump_1_freq = models.FloatField(default=0)  # 주파수
+    pump_1_freq = models.FloatField(default=0) # 주파수
     pump_1_power = models.CharField(max_length=120, blank=True) # 전력
 
     pump_2_on = models.BooleanField(default=False)
@@ -90,7 +90,7 @@ class Sector(TimeStampedModel):
     pump_2_auto = models.BooleanField(default=False)  # 수동/자동
     #pump_2_operating_rate = models.CharField(max_length=120, blank=True)  # 가동률
     pump_2_current = models.CharField(max_length=120, blank=True) # 전류
-    pump_2_freq = models.FloatField(default=0)  # 주파수
+    pump_2_freq =models.FloatField(default=0)# 주파수
     pump_2_power = models.CharField(max_length=120, blank=True)  # 전력
 
     pump_3_on = models.BooleanField(default=False)  
@@ -120,36 +120,32 @@ class Sector(TimeStampedModel):
     
     def pump_1_operating_rate(self):
         if self.pump_1_freq != 0:
-            pump_1_rate = self.pump_1_freq / 60
-            return round(pump_1_rate, 2)
-        else: 
+            rate = self.pump_1_freq / 60
+            return round(rate, 2)
+        else:
             return 0
 
     def pump_2_operating_rate(self):
         if self.pump_2_freq != 0:
-            pump_2_rate = self.pump_2_freq / 60
-            return round(pump_2_rate, 2)
-        else: 
+            rate = self.pump_2_freq / 60
+            return round(rate, 2)
+        else:
             return 0
 
     def pump_3_operating_rate(self):
         if self.pump_3_freq != 0:
-            pump_3_rate = self.pump_3_freq / 60
-            return round(pump_3_rate, 2)
-            #return 1
-        else: 
+            rate = self.pump_3_freq / 60
+            return round(rate, 2)
+        else:
             return 0
 
     def pump_4_operating_rate(self):
         if self.pump_4_freq != 0:
-            pump_4_rate = self.pump_4_freq / 60
-            return round(pump_4_rate, 2)
-            #return 1
-        else: 
-            return 0    
-    # def rate_count(self):
-    #     self.pump_1_operating_rate = self.pump_1_freq
-    #     self.save()
+
+            rate = self.pump_4_freq / 60
+            return round(rate, 2)
+        else:
+            return 0
 
 
 # @python_2_unicode_compatible

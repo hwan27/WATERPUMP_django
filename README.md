@@ -16,6 +16,8 @@ Management of Pumps with Django and React/ReactNative
 
 
 
-python manage.py runserver 192.168.0.26:8080/
-yarn start => http://106.252.42.82:8000
-modem server => input: 192.168.0.26:8079, connect: 106.252.42.82.8079
+서버 아이피: python manage.py runserver 192.168.0.26:8080/
+어드민: 106.252.42.82:8080/admin
+프론트: yarn start => http://106.252.42.82:8000
+모뎀 서버: Host: 192.168.0.26 Port: 8079 
+모뎀 클라이언트: 106.252.42.82.8079

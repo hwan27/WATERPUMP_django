@@ -16,7 +16,7 @@ class connectModem(APIView):
         modem_number = str(number['modem_number'])
         # print(modem_number)
         
-        ser = serial.Serial('COM9', 115200, timeout=0,
+        ser = serial.Serial('COM3', 115200, timeout=0,
                     parity=serial.PARITY_EVEN, rtscts=1)
         # ser.write(str.encode('AT\r'))
         ser.write(str.encode("AT*MOREQ="+modem_number+", 00000001\r"))
@@ -34,7 +34,7 @@ class setPressure(APIView):
         pressure = str(number['pressure'])
         set_pressure = '{:0>4}'.format(pressure)
         
-        ser = serial.Serial('COM9', 115200, timeout=0,
+        ser = serial.Serial('COM3', 115200, timeout=0,
                     parity=serial.PARITY_EVEN, rtscts=1)
         # ser.write(str.encode('AT\r'))
         ser.write(str.encode("AT*MOREQ="+modem_number+", 1111"+set_pressure+"\r"))

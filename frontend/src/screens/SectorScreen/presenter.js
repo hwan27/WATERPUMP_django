@@ -38,8 +38,7 @@ const RenderFeed = props => (
               <span className={styles.connectEnd}>접속종료</span>
             )}
           </div>
-
-          <div onClick={props.refreshInterval} className={styles.connectPlz}>
+          <div onClick={props.refreshInterval} className= {props.isRefreshing ? styles.connectGray : styles.connectPlz}>
             접속요청
           </div>
         </div>

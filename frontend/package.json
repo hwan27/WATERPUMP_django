@@ -2,7 +2,7 @@
     "name": "frontend",
     "version": "0.1.0",
     "private": true,
-    "proxy": "http://61.74.249.192:8080/",
+    "proxy": "http://106.252.42.82:8080/",
     "dependencies": {
         "@babel/core": "7.2.2",
         "@fortawesome/fontawesome-svg-core": "^1.2.21",

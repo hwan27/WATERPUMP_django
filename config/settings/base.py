@@ -39,7 +39,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres://postgres:9315@localhost:5432/waterpump_db'),
+    'default': env.db('DATABASE_URL', default='postgres://postgres:9315@localhost:5432/pump_db'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 

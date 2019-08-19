@@ -11,7 +11,7 @@ import socket
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
-def run_client(HOST='127.0.0.1', PORT=8000):
+def run_client(HOST='106.252.42.82', PORT=8079):
     socket.connect((HOST, PORT))
 
     while 1:

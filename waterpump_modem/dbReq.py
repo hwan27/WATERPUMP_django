@@ -3,8 +3,8 @@ import json
 # import pandas as pd
 # from pandas import DataFrame
 
-APIURL = 'http://61.74.249.192:8080/'
-JWT = "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTYxODczNzE0LCJlbWFpbCI6Im1lYWRlYTI3QGdtYWlsLmNvbSJ9.9jtkmi-UCWy0RgeQIqLmsCTNXST3pksJsI9gzBjkkAU"
+APIURL = 'http://106.252.42.82:8080/'
+JWT = "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImxpbSIsImV4cCI6MTU2NjIwNDg0MCwiZW1haWwiOiJtZWFkZWEyN0BnbWFpbC5jb20ifQ.hSs5xwnp1zugkAVq5ZI4hpbcBcnet7aJaOAtD9_O6Sg"
 headers = {'Authorization': JWT, "Content-Type": "application/json"}
 
 
@@ -35,6 +35,8 @@ def postSector(id, form):
     data = form
     requests.put(URL, headers=headers, data=json.dumps(data))
 
+# form = {"pump_count": 3}
+# postSector('JC0001', form)
 
 #postSector('pump_count', '3', "1")
 # dataFrame = DataFrame(data)

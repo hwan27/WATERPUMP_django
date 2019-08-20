@@ -2,6 +2,8 @@
 
 Management of Pumps with Django and React/ReactNative
 
+# 설치 및 설정
+
 0. python / node install
 1. pip install pipenv
 2. pipenv shell
@@ -13,6 +15,20 @@ Management of Pumps with Django and React/ReactNative
 8. python manage.py makemigrations, migrate, createsuperuser
 9. python manage.py runserver
 10. frontend: npm i, yarn build, yarn start
+
+# 실행
+
+1. django server(database)
+- WATERPUMP 디렉토리에서 python manage.py runserver 192.168.0.26:8080 입력
+
+2. frontend 
+- WATERPUMP/frontend 디렉토리에서 yarn start 입력
+
+3. modem server(모뎀에서 보내는 data 수신해서 database 변경)
+- WATERPUMP/waterpump_modem 디렉토리에서 python server.py 입력
+- HOST? 나오면 192.168.0.26 입력
+- PROT? 나오면 8079 입력
+
 
 
 

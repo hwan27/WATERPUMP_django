@@ -27,7 +27,7 @@ Management of Pumps with Django and React/ReactNative
 3. modem server(모뎀에서 보내는 data 수신해서 database 변경)
 - WATERPUMP/waterpump_modem 디렉토리에서 python server.py 입력
 - HOST? 나오면 192.168.0.26 입력
-- PROT? 나오면 8079 입력
+- PORT? 나오면 8079 입력
 
 
 

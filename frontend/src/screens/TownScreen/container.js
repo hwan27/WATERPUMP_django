@@ -28,6 +28,12 @@ class Container extends Component {
             });
         }
     };
+
+    _refresh = () => {
+        const { getTown } = this.props;
+        
+        getTown(this.props.feedTown.id);
+      };
     _logout = async () => {
         const { logout } = this.props;
         await this.props.history.replace("/");
@@ -45,6 +51,7 @@ class Container extends Component {
                 history={history}
                 logout={this._logout}
                 gohome={this._gohome}
+                refresh={this._refresh}
             />
         );
     }

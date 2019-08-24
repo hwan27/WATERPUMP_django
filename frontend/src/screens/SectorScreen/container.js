@@ -12,9 +12,10 @@ class Container extends Component {
     getSector: PropTypes.func.isRequired
   };
 
+  intervalRefresh = 0
+
   _refresh = () => {
     const { getSector } = this.props;
-    this.setState({ loading: true });
     getSector(this.props.feedSector.sector_id);
   };
 
@@ -63,13 +64,16 @@ class Container extends Component {
     ) {
       getSector(sectorId);
     } else {
-      //alert("hello");
       this.setState({
         setPressure: this.props.feedSector.set_pressure,
         loading: false
       });
     }
+    this.intervalRefresh = setInterval(()=>this._refresh(), 60000)
   };
+  componentWillUnmount(){
+    clearInterval(this.intervalRefresh)
+  }
   componentWillReceiveProps = nextProps => {
     if (nextProps.feedSector) {
       this.setState({
@@ -90,6 +94,7 @@ class Container extends Component {
         update_pressure={this._updatePressure}
         logout={this._logout}
         gohome={this._gohome}
+        refresh={this._refresh}
       />
     );
   }

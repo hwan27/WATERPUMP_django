@@ -15,12 +15,14 @@ App.propTypes = {
     isLoggedIn: PropTypes.bool.isRequired
 };
 const PrivateRoutes = props => (
-    <Switch>
+     <Switch>
+    
         <Route key="1" exact path="/" component={FeedScreen} />
-        <Route exact path="/town/:id" component={TownScreen} />
-        <Route exact path="/sector/:id" component={SectorScreen} />
-    </Switch>
-);
+        <Route key='2' exact path="/town/:id" component={TownScreen} />
+        <Route key='3' exact path="/sector/:id" component={SectorScreen} />
+        
+     </Switch> 
+)
 
 const PublicRoutes = props => (
     <Switch>

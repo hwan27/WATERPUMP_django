@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./styles.module.scss";
 import pumpImg from "../../images/whitePump.gif";
+import styles from "./styles.module.scss";
 
 const Pump3 = props => (
     <div className={styles.pumpBoxes}>

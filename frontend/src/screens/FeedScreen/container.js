@@ -19,6 +19,12 @@ class Container extends Component {
             });
         }
     }
+    _refresh = () => {
+        const { getFeed } = this.props;
+        //this.setState({ loading: true });
+        getFeed()
+      };
+
     _logout = () => {
         const { logout } = this.props;
         logout();
@@ -38,6 +44,7 @@ class Container extends Component {
                 logout={this._logout}
                 {...this.state}
                 feed={feed}
+                refresh={this._refresh}
             />
         );
     }

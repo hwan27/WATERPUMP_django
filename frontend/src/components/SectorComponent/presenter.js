@@ -38,15 +38,25 @@ const SectorComponent = props => {
             저압
           </div>
         ) : null}
-        {props.sector.pump_1_disorder ? (
+        {props.sector.pump_1_disorder_a == '0000' ? null : (
           <div className={styles.alertFont}>
             <FontAwesomeIcon
               icon={faExclamationTriangle}
               className={styles.alertIcon}
             />
-            펌프1 고장
+            펌프1 고장 A: {props.sector.pump_1_disorder_a}
           </div>
-        ) : null}
+        ) }
+        {props.sector.pump_1_disorder_b == '0000' ? null : (
+          <div className={styles.alertFont}>
+            <FontAwesomeIcon
+              icon={faExclamationTriangle}
+              className={styles.alertIcon}
+            />
+            펌프1 고장 B: {props.sector.pump_1_disorder_b}
+          </div>
+        ) }
+        
         {props.sector.pump_1_low_water ? (
           <div className={styles.alertFont}>
             <FontAwesomeIcon
@@ -56,15 +66,24 @@ const SectorComponent = props => {
             펌프1 저수위
           </div>
         ) : null}
-        {props.sector.pump_2_disorder ? (
+        {props.sector.pump_2_disorder_a == '0000' ? null: (
           <div className={styles.alertFont}>
             <FontAwesomeIcon
               icon={faExclamationTriangle}
               className={styles.alertIcon}
             />
-            펌프2 고장
+            펌프2 고장 A: {props.sector.pump_2_disorder_a}
           </div>
-        ) : null}
+        ) }
+        {props.sector.pump_2_disorder_b == '0000' ? null: (
+          <div className={styles.alertFont}>
+            <FontAwesomeIcon
+              icon={faExclamationTriangle}
+              className={styles.alertIcon}
+            />
+            펌프2 고장 B: {props.sector.pump_2_disorder_b}
+          </div>
+        ) }
         {props.sector.pump_2_low_water ? (
           <div className={styles.alertFont}>
             <FontAwesomeIcon
@@ -74,15 +93,24 @@ const SectorComponent = props => {
             펌프2 저수위
           </div>
         ) : null}
-        {props.sector.pump_3_disorder ? (
+        {props.sector.pump_3_disorder_a == '0000' ? null : (
           <div className={styles.alertFont}>
             <FontAwesomeIcon
               icon={faExclamationTriangle}
               className={styles.alertIcon}
             />
-            펌프3 고장
+            펌프3 고장 A: {props.sector.pump_3_disorder_a}
           </div>
-        ) : null}
+        ) }
+        {props.sector.pump_3_disorder_b == '0000' ? null : (
+          <div className={styles.alertFont}>
+            <FontAwesomeIcon
+              icon={faExclamationTriangle}
+              className={styles.alertIcon}
+            />
+            펌프3 고장 B: {props.sector.pump_3_disorder_b}
+          </div>
+        ) }
         {props.sector.pump_3_low_water ? (
           <div className={styles.alertFont}>
             <FontAwesomeIcon
@@ -92,15 +120,24 @@ const SectorComponent = props => {
             펌프3 저수위
           </div>
         ) : null}
-        {props.sector.pump_4_disorder ? (
+        {props.sector.pump_4_disorder_a == '0000' ? null : (
           <div className={styles.alertFont}>
             <FontAwesomeIcon
               icon={faExclamationTriangle}
               className={styles.alertIcon}
             />
-            펌프4 고장
+            펌프4 고장 A: {props.sector.pump_4_disorder_a}
           </div>
-        ) : null}
+        ) }
+        {props.sector.pump_4_disorder_b == '0000' ? null : (
+          <div className={styles.alertFont}>
+            <FontAwesomeIcon
+              icon={faExclamationTriangle}
+              className={styles.alertIcon}
+            />
+            펌프4 고장 B: {props.sector.pump_4_disorder_b}
+          </div>
+        ) }
         {props.sector.pump_4_low_water ? (
           <div className={styles.alertFont}>
             <FontAwesomeIcon

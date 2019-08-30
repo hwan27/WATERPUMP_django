@@ -9,6 +9,9 @@ class Container extends Component {
     static propType = {
         getFeed: PropTypes.func.isRequired
     };
+    
+    intervalRefresh = 0
+
     componentDidMount() {
         const { getFeed } = this.props;
         if (!this.props.feed) {
@@ -18,6 +21,7 @@ class Container extends Component {
                 loading: false
             });
         }
+        this.intervalRefresh = setInterval(()=>this._refresh(), 300000)
     }
     _refresh = () => {
         const { getFeed } = this.props;

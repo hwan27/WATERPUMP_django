@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faAirFreshener, faHandHolding } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faSync } from '@fortawesome/free-solid-svg-icons'
+import { faSync } from '@fortawesome/free-solid-svg-icons';
+import { faSyncAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -23,10 +24,13 @@ const Navigation = (props, history) => (
                 "상수도 가압장 관측 제어 설비"
             )}
         </div>
-        <div className={styles.logoutFont}>
-        <div onClick={props.refresh}>
-            <FontAwesomeIcon icon={faSync} />
-        </div></div>
+        <div className={styles.logoutFont}>            
+        <div onClick={props.refresh} >
+                             
+                <FontAwesomeIcon icon={faSync} />
+                                       
+        </div>   
+        </div>    
         <div className={styles.logoutFont}>
             <div onClick={props.logout}>
                 <FontAwesomeIcon icon={faSignOutAlt} />

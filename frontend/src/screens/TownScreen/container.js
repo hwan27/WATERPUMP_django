@@ -20,6 +20,7 @@ class Container extends Component {
                 loading: false
             });
         }
+        this.intervalRefresh = setInterval(()=>this._refresh(), 60000)
     };
     componentWillReceiveProps = nextProps => {
         if (nextProps.feedTown) {
@@ -28,6 +29,8 @@ class Container extends Component {
             });
         }
     };
+
+    intervalRefresh = 0
 
     _refresh = () => {
         const { getTown } = this.props;

@@ -120,21 +120,21 @@ class Sector(TimeStampedModel):
     
     def pump_1_operating_rate(self):
         if self.pump_1_freq != 0:
-            rate = self.pump_1_freq / 60
+            rate = self.pump_1_freq / 60 * 100
             return round(rate, 2)
         else:
             return 0
 
     def pump_2_operating_rate(self):
         if self.pump_2_freq != 0:
-            rate = self.pump_2_freq / 60
+            rate = self.pump_2_freq / 60 * 100
             return round(rate, 2)
         else:
             return 0
 
     def pump_3_operating_rate(self):
         if self.pump_3_freq != 0:
-            rate = self.pump_3_freq / 60
+            rate = self.pump_3_freq / 60 * 100
             return round(rate, 2)
         else:
             return 0
@@ -142,7 +142,7 @@ class Sector(TimeStampedModel):
     def pump_4_operating_rate(self):
         if self.pump_4_freq != 0:
 
-            rate = self.pump_4_freq / 60
+            rate = self.pump_4_freq / 60 * 100
             return round(rate, 2)
         else:
             return 0

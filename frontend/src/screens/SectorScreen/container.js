@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import SectorScreen from "./presenter";
-import { PopupboxManager, PopupboxContainer} from'react-popupbox'
+import { confirmAlert} from'react-confirm-alert'
 
 class Container extends Component {
   state = {
@@ -30,13 +30,14 @@ class Container extends Component {
   };
 
   _updatePressure = async () => {
+    //alert(`설정압력이 ${this.state.setPressure}Bar로 변경되었습니다`)
     const { setModem, updatePressure } = this.props;
     const { setPressure } = this.state;
     await updatePressure(this.props.feedSector.sector_id, setPressure);
     await setModem(this.props.feedSector.modem_number, setPressure);
+    
     this._refresh();
-    this._popup()
-    //alert("설정압력이" + setPressure + "Bar로 변경되었습니다");
+    ;
   };
 
   _refreshInterval = async () => {
@@ -49,18 +50,20 @@ class Container extends Component {
     }, 60000);
   };
 
-  _popup = () => {
-    const content = (
-      <div>"hi"</div>
+  _handleClick = (e) => {
+    alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
+      
+      this._updatePressure()
+  }
 
-    )
-    PopupboxManager.open({content, config: {
-      titleBar: {
-        enable: true,
-text: 'hello'},
-fadeIn: true,
-fadeInSpeed: 500      }
-    })
+  
+
+  _handleEnter = (e) => {
+    if (e.keyCode == 13){
+      alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
+      
+      this._updatePressure()
+    }
   }
 
   _connectModem = () => {
@@ -118,6 +121,8 @@ fadeInSpeed: 500      }
         gohome={this._gohome}
         refresh={this._refresh}
         mapClick={this._mapClick}
+        handleEnter={this._handleEnter}
+        handleClick={this._handleClick}
       />
     );
   }

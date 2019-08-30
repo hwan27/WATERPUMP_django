@@ -21,8 +21,12 @@ class Container extends Component {
                 loading: false
             });
         }
-        this.intervalRefresh = setInterval(()=>this._refresh(), 300000)
+        // this.intervalRefresh = setInterval(()=>this._refresh(), 300000)
     }
+
+    // componentWillUnmount(){
+    //     clearInterval(this.intervalRefresh)
+    // }
     _refresh = () => {
         const { getFeed } = this.props;
         //this.setState({ loading: true });

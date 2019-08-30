@@ -9,6 +9,10 @@ class Container extends Component {
     static propType = {
         getTown: PropTypes.func.isRequired
     };
+
+    
+    intervalRefresh = 0
+
     componentDidMount = () => {
         const { getTown } = this.props;
         const townId = this.props.match.params.id;
@@ -30,7 +34,9 @@ class Container extends Component {
         }
     };
 
-    intervalRefresh = 0
+    componentWillUnmount(){
+        clearInterval(this.intervalRefresh)
+    }
 
     _refresh = () => {
         const { getTown } = this.props;

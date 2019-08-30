@@ -88,23 +88,29 @@ const SectorScreen = props => {
               
     
               <div className={styles.boxFont}>설정압력:</div>
-              <form>
+              <form onSubmit={props.handleClick}>
                 <input
                   value={props.setPressure}
                   onChange={props.set_pressure}
+                  //onKeyDown={props.handleEnter}
                   className={styles.boxValueInput}
-    
+                  onSubmit={props.handleClick}
                 />
-              </form>
+           
               <div className={styles.boxValue2}>Bar</div>
-              <Popup trigger = {
+              
+              <button className={styles.boxButton} type='submit'>
+                <FontAwesomeIcon icon={faEdit} />
+              </button>
+              
+              </form>
+              {/* <div onClick={props.handleClick} className={styles.boxButton}>
+                <FontAwesomeIcon icon={faEdit} />
+              </div> */}
+              {/* <Popup trigger = {
               <div onClick={props.update_pressure} className={styles.boxButton}>
                 <FontAwesomeIcon icon={faEdit} />
               </div>}>
-{/*                 
-                설정압력을 {props.setPressure}Bar 로 변경합니다 */}
-{/*                 
-                */}
                 {close=>(
                   <div>
                   설정압력을 {props.setPressure}Bar 로 변경합니다
@@ -115,7 +121,7 @@ const SectorScreen = props => {
                 <div onClick={close}>
                   아니요
                 </div></div></div>)}
-              </Popup>
+              </Popup> */}
             </div>
     
             <div className={styles.updateBox}>

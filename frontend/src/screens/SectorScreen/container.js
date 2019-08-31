@@ -31,14 +31,47 @@ class Container extends Component {
   };
 
   _updatePressure = async () => {
+
     const { setModem, updatePressure } = this.props;
     const { setPressure } = this.state;
     const pressure = setPressure * 100
 
-    await updatePressure(this.props.feedSector.sector_id, pressure);
-    await setModem(this.props.feedSector.modem_number, pressure);
+    // if (pressure < 1000) {
+    //   const pressure = '0' + pressure
+    //   await updatePressure(this.props.feedSector.sector_id, setPressure);
+    //   await setModem(this.props.feedSector.modem_number, pressure);
+      
+    //   this._refresh();
+    // }
+
+    // else if (pressure < 100) {
+    //   const pressure = '00' + pressure
+    //   await updatePressure(this.props.feedSector.sector_id, setPressure);
+    //   await setModem(this.props.feedSector.modem_number, pressure);
+      
+    //   this._refresh(); 
+    // }
+
+    // else if (pressure < 10) {
+    //   //const pressure = '000' + pressure
+    //   await updatePressure(this.props.feedSector.sector_id, setPressure);
+    //   await setModem(this.props.feedSector.modem_number, pressure);
+      
+    //   this._refresh();
+    // }
+
+    // else {
+      
+      await updatePressure(this.props.feedSector.sector_id, setPressure);
+      await setModem(this.props.feedSector.modem_number, pressure);
+      
+      this._refresh();
+    //}
+
+    // await updatePressure(this.props.feedSector.sector_id, setPressure);
+    // await setModem(this.props.feedSector.modem_number, pressure);
     
-    this._refresh();
+    // this._refresh();
     ;
   };
 

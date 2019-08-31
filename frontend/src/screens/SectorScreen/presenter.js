@@ -86,7 +86,6 @@ const SectorScreen = props => {
                 {props.sector.discharge_pressure} Bar
               </div>
               
-    
               <div className={styles.boxFont}>설정압력:</div>
               <form onSubmit={props.handleClick}>
                 <input
@@ -102,8 +101,10 @@ const SectorScreen = props => {
               <button className={styles.boxButton} type='submit'>
                 <FontAwesomeIcon icon={faEdit} />
               </button>
+             
               
               </form>
+       
               {/* <div onClick={props.handleClick} className={styles.boxButton}>
                 <FontAwesomeIcon icon={faEdit} />
               </div> */}

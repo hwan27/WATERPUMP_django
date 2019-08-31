@@ -94,7 +94,7 @@ const SectorScreen = props => {
                   onChange={props.set_pressure}
                   //onKeyDown={props.handleEnter}
                   className={styles.boxValueInput}
-                  onSubmit={props.handleClick}
+                  //onSubmit={props.handleClick}
                 />
            
               <div className={styles.boxValue2}>Bar</div>

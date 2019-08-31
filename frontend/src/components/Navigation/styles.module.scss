@@ -27,6 +27,7 @@ a:active {
         font-size: 2.5vw;
         text-align: center;
         margin-left: 6vw;
+        cursor: pointer;
     }
     .header_column2 {
         width: 77%;
@@ -69,7 +70,8 @@ a:active {
 
 .logoutFont {
     font-size:2.5vw;
-    margin-right: 4vw
+    margin-right: 4vw;
+    cursor: pointer;
 }
 
 .header_bottom {

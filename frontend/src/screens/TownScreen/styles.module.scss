@@ -13,6 +13,7 @@ ul {
 .feed {
     display: grid;
     grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+    cursor: pointer;
     // grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
 }
 

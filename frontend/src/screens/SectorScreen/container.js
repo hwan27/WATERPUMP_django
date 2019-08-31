@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import SectorScreen from "./presenter";
 import { confirmAlert} from'react-confirm-alert'
+import { faThList } from "@fortawesome/free-solid-svg-icons";
 
 class Container extends Component {
   state = {
@@ -30,11 +31,12 @@ class Container extends Component {
   };
 
   _updatePressure = async () => {
-    //alert(`설정압력이 ${this.state.setPressure}Bar로 변경되었습니다`)
     const { setModem, updatePressure } = this.props;
     const { setPressure } = this.state;
-    await updatePressure(this.props.feedSector.sector_id, setPressure);
-    await setModem(this.props.feedSector.modem_number, setPressure);
+    const pressure = setPressure * 100
+
+    await updatePressure(this.props.feedSector.sector_id, pressure);
+    await setModem(this.props.feedSector.modem_number, pressure);
     
     this._refresh();
     ;
@@ -50,21 +52,43 @@ class Container extends Component {
     }, 60000);
   };
 
-  _handleClick = (e) => {
-    alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
-      
+  _handleClick = () => {
+    if(this.state.setPressure <100) {
+    if (this.state.setPressure.length == 3 && this.state.setPressure.slice(1,2) == '.' ){
+      alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
       this._updatePressure()
+    }
+    else if (this.state.setPressure.length == 4 && (this.state.setPressure.slice(1,2) == '.' || this.state.setPressure.slice(2,3) =='.') ){
+      alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
+      this._updatePressure()
+    }
+    else if (this.state.setPressure.length == 5 && this.state.setPressure.slice(2,3) == '.'){
+      alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
+      this._updatePressure()
+    }
+    else {
+      alert('입력값이 잘못되었습니다')
+    }
+  }
+    // if (this.state.setPressure * 100 < 10000 && this.state.setPressure.slice(0,1) != '.' && this.state.setPressure.length ==5 ){
+    // alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
+      
+    //   this._updatePressure()
+    // }
+    else {
+      alert("입력값이 잘못되었습니다")
+    }
   }
 
   
 
-  _handleEnter = (e) => {
-    if (e.keyCode == 13){
-      alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
+  // _handleEnter = (e) => {
+  //   if (e.keyCode == 13){
+  //     alert(`설정압력이 ${this.state.setPressure}Bar 로 변경되었습니다`)
       
-      this._updatePressure()
-    }
-  }
+  //     this._updatePressure()
+  //   }
+  // }
 
   _connectModem = () => {
     const { connectModem } = this.props;

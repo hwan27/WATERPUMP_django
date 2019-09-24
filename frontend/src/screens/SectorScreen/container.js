@@ -100,7 +100,7 @@ class Container extends Component {
       this._updatePressure()
     }
     else {
-      alert('입력값이 잘못되었습니다')
+      alert('입력값이 잘못되었습니다.(예. 4.0 bar)')
     }
   }
     // if (this.state.setPressure * 100 < 10000 && this.state.setPressure.slice(0,1) != '.' && this.state.setPressure.length ==5 ){
@@ -109,7 +109,7 @@ class Container extends Component {
     //   this._updatePressure()
     // }
     else {
-      alert("입력값이 잘못되었습니다")
+      alert("입력값이 잘못되었습니다. (예. 4.0 bar)")
     }
   }
 
@@ -135,6 +135,15 @@ class Container extends Component {
   _gohome = () => {
     this.props.history.replace("/");
   };
+  _back = () => {
+    for ( var i=0; i <= 1; i++ ) {
+      
+      alert(this.props.sector_Id);
+      
+      
+    }
+    this.props.history.replace(`/`);
+};
   componentDidMount = async () => {
     const { getSector } = this.props;
     const sectorId = this.props.match.params.id;
@@ -176,6 +185,7 @@ class Container extends Component {
         update_pressure={this._updatePressure}
         logout={this._logout}
         gohome={this._gohome}
+        back={this._back}
         refresh={this._refresh}
         mapClick={this._mapClick}
         handleEnter={this._handleEnter}

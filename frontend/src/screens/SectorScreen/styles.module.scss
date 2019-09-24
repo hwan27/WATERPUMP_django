@@ -164,6 +164,18 @@ ul {
   
 }
 
+.boxValue3 {
+  width: 8vw;
+  display: flex;
+  justify-content: start;
+  font-size: 1.5vw;
+  color: #00aed9;
+  font-weight: 600;
+  margin: 0;
+  padding:0;
+  
+}
+
 .boxValueInput {
   width: 4vw;
   display: flex;
@@ -175,7 +187,7 @@ ul {
 }
 
 .boxValueInput1 {
-  width: 4vw;
+  width: 8vw;
   display: flex;
   padding: 0;
   margin: 0;

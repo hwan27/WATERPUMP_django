@@ -86,17 +86,23 @@ const SectorScreen = props => {
                 {props.sector.discharge_pressure} Bar
               </div>
               
-              <div className={styles.boxFont}>설정압력:</div>
+              <div className={styles.boxFont}>설정압력:</div>             
+              <div className={styles.boxValue3}>
+                {props.sector.set_pressure} Bar
+              </div>
               <form onSubmit={props.handleClick} className={styles.boxValueInput1}>
-                <input
-                  value={props.setPressure}
+              
+                <input                 
+                  value={props.setPressure}                  
                   onChange={props.set_pressure}
                   //onKeyDown={props.handleEnter}
                   className={styles.boxValueInput}
-                  //onSubmit={props.handleClick}
+                  //onSubmit={props.handleClick}             
+                                 
                 />
+                
            
-              <span className={styles.boxValue2}>Bar</span>
+              {/* <span className={styles.boxValue2}>Bar</span> */}
               
               <button className={styles.boxButton} type='submit'>
                 <FontAwesomeIcon icon={faEdit} />
@@ -207,7 +213,7 @@ const RenderFeed = props => (
           </div>
 
           <div className={styles.boxFont}>설정압력:</div>
-          <form className={styles.boxValueInput}>
+          <form className={styles.boxValueInput}>         
             <input
               value={props.setPressure}
               onChange={props.set_pressure}

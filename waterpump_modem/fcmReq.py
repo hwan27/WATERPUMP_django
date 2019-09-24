@@ -24,3 +24,4 @@ def fcmReq(m, title, body):
             }
         }
         requests.post(fcmURL, data=json.dumps(fcmData), headers=fcmHeaders)
+        

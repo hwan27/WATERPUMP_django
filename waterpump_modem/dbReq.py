@@ -12,17 +12,20 @@ def getFcmToken(s):
     URL = APIURL+"users"
     res = requests.get(URL, headers=headers)
     data = res.json()
+    fcmToken = []
 
     for i in data:
         managing = i['managing']
         if managing == s:
             username = i['username']
-            fcmToken = []
-            fcmToken.append(i['fcmToken'])
+            if i['fcmToken'] in fcmToken:
+                pass
+            else: 
+                fcmToken.append(i['fcmToken'])
 
-            return fcmToken
+    return fcmToken
 
-
+getFcmToken(1)
 def getSector(id):
     URL = APIURL+"pumps/sector/"+id+"/"
     res = requests.get(URL, headers=headers)

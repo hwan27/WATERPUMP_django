@@ -1,12 +1,14 @@
 import React from "react";
 import pumpImg from "../../images/whitePump.gif";
 import styles from "./styles.module.scss";
+import pumpImgX from "../../images/whitePumpX.png";
 
 const Pump3 = props => (
     <div className={styles.pumpBoxes}>
         <div className={styles.pumpBox}>
             <div className={styles.pump}>
-                <img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>
+            {props.sector.pump_1_on ?  (<img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>) : 
+                (<img className={styles.pumpImg} src={pumpImgX} alt="pumpImg"/>)}
                 <div className={styles.pumpTitle}>1번펌프</div>
             </div>
             <div className={styles.detail}>
@@ -39,7 +41,8 @@ const Pump3 = props => (
 
         <div className={styles.pumpBox}>
             <div className={styles.pump}>
-                <img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>
+            {props.sector.pump_2_on ?  (<img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>) : 
+                (<img className={styles.pumpImg} src={pumpImgX} alt="pumpImg"/>)}
                 <div className={styles.pumpTitle}>2번펌프</div>
             </div>
             <div className={styles.detail}>
@@ -72,7 +75,8 @@ const Pump3 = props => (
 
         <div className={styles.pumpBox}>
             <div className={styles.pump}>
-                <img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>
+            {props.sector.pump_3_on ?  (<img className={styles.pumpImg} src={pumpImg} alt="pumpImg"/>) : 
+                (<img className={styles.pumpImg} src={pumpImgX} alt="pumpImg"/>)}
                 <div className={styles.pumpTitle}>3번펌프</div>
             </div>
             <div className={styles.detail}>

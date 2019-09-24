@@ -21,7 +21,7 @@ Management of Pumps with Django and React/ReactNative
 1. django server(database)
 - WATERPUMP 디렉토리에서 python manage.py runserver 192.168.0.26:8080 입력
 
-2. frontend 
+2. frontend aa0001FFFF0002000000000000800000000000000000 False, 'pump_1_low000000 
 - WATERPUMP/frontend 디렉토리에서 yarn start 입력
 
 3. modem server(모뎀에서 보내는 data 수신해서 database 변경)

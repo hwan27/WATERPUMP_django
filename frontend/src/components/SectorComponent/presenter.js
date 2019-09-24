@@ -146,7 +146,8 @@ const SectorComponent = props => {
             />
             펌프4 저수위
           </div>
-        ) : null}
+        ): null}               
+        
       </div>
     </div>
   );
